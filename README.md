@@ -1,0 +1,1 @@
+# Sterowanie-urzadzeniami-w-jezyku-naturalnym
