@@ -26,6 +26,7 @@ Urządzenia można sterować komendami. Na przykład:
 - on - załącza urządzenie
 - off - wyłącza urządzenie
 - toggle - zmienia stan na przeciwny
+
 Chcemy aby urządzenia można było sterować poleceniami w języku naturalnym.
 Przykłady poleceń (niekoniecznie poprawnych i na temat) znajdują się z pliku polecenia.txt
 Proszę zaproponować strukturę pliku opisującego konfiguracje domu oraz strukturę danych
