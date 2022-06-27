@@ -1,4 +1,38 @@
 # Sterowanie-urzadzeniami-w-jezyku-naturalnym
+
+struktura domu jset opisana w pliku home.xml
+przykładowe testowe pytania znajdują się w resources/example_commands
+procedura asystenta i wszystkie operacje niezwiązane z samym TTS i STT są w LoadHome:
+
+program uruchamiany jest poprzez odpalenie pliku main.py
+
+asystent:
+    
+    podjąłem próbę przetworzenia słów stemming i lemminization, ale nie doszukałem się wygodnych 
+    implementacji dla jezyka polskiego. Jedyne co było, to morfeusz, który bardziej komplikował sprawę,
+    bo jedyne co mogłem z nim zrobić, to dopasować części mowy
+    
+    znalazłem jeszcze jakis inny stemmer dzialajacy przez ai, ale dawał inne stemy dla słow o tym samym znaczeniu,
+    więc zostałem przy zrobieniu tablicy aliasów
+
+    w LoadHome na sztywno są zapisane tablice z aliasami do każdej z komend/obiektow/pomieszczeń
+
+    1) tokenizuje polecenie na słowa
+    2) usuwam polskie stop-words wzięte z jakiegoś githuba ( resources/polish_stopwords ) #potrzebny przypis
+    3) dopasowuję do każdego słowa aliasy z informacji których jeszcze nie mam
+        najpierw szukam slowa z komendą, jak nie znajdę, to kończę program i zakładam, że coś źle usłyszał
+    
+        później ustawiam zmienna mówiącą o piętrze domu, pokoju  i obiekcie na null
+        i szukam każdego z nich w pozostałych słowach.
+        
+    4) za pomocą regexow XMLa szukam pasujących urządzeń ( tam gdzie nie było wskazana informacja tj. zostało Null, zostawiam gwiazdkę)
+
+        np. pietro/*/lampa
+    5) stosuję komendę na tym wszystkim z uprzednim zapytaniem urzytkownika.
+
+Koniec
+
+
 Dom składa się z pomieszczeń. Na przykład:
 - kuchnia
 - salon
@@ -52,3 +86,7 @@ salonie należy zwrócić listę komend.
 Funkcja powinna znać strukturę domu: Na przykład wyłącz całe oświetlenie na parterze.
 Rozwiązanie powinno zawierać krótki opis, kod funkcji z komentarzami oraz zestaw poleceń,
 którymi testowano funkcję
+
+
+1. House structure XML:
+https://towardsdatascience.com/processing-xml-in-python-elementtree-c8992941efd2

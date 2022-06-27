@@ -1,0 +1,38 @@
+<house>
+    <pietro poziom="0">
+        <kuchnia>
+            <czajnik set="on" />
+            <lampa set="off" />
+        </kuchnia>
+        <salon>
+            <telewizor set="on" />
+            <lampa set="on" />
+        </salon>
+        <korytarz>
+            <lampa />
+        </korytarz>
+    </pietro>
+    <pietro poziom="1">
+        <biuro>
+            <komputer set="on" />
+            <lampa set="on" />
+        </biuro>
+        <sypialnia>
+            <lampa set="on" />
+        </sypialnia>
+        <pokoj>
+              <lampa set="on" />
+        </pokoj>
+    </pietro>
+    <pietro poziom="2">
+        <garderoba>
+              <lampa set="on" />
+        </garderoba>
+        <lazienka>
+            <lampa set="off" />
+        </lazienka>
+    </pietro>
+    <garaz>
+        <drzwi set="on" />
+    </garaz>
+</house>
